@@ -192,21 +192,8 @@
       aria-label="Toggle always on top"
     >
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-        <path
-          d="M8 2 L8 9 M5 6 L8 9 L11 6"
-          stroke="currentColor"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          fill={$settings.always_on_top ? 'currentColor' : 'none'}
-        />
-        <path
-          d="M5 10 L5 11.5 C5 12.33 5.67 13 6.5 13 L9.5 13 C10.33 13 11 12.33 11 11.5 L11 10"
-          stroke="currentColor"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          fill="none"
-        />
+        <circle cx="8" cy="4" r="3" stroke="currentColor" stroke-width="1.5" />
+        <line x1="8" y1="7" x2="8" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
       </svg>
     </button>
   </Tooltip>
