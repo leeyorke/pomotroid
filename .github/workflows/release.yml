@@ -97,7 +97,7 @@ jobs:
         run: echo "$GPG_PRIVATE_KEY" | gpg --batch --import
 
       - name: Build (release)
-        run: npm run tauri build -- --config '{"bundle":{"createUpdaterArtifacts":true}}' --bundles deb,appimage,rpm
+        run: npm run tauri build -- --config '{"bundle":{"createUpdaterArtifacts":false}}' --bundles deb,appimage,rpm
         env:
           CI: true
 
