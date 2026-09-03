@@ -138,6 +138,7 @@
   "notification_long_break_body": "Uzun bir molayı hak ettin. Uzaklaş ve deşarj ol.",
   "tooltip_settings": "Ayarları aç",
   "tooltip_statistics": "İstatistikleri aç",
+  "tooltip_pin": "Her zaman üstte geçiş",
   "tooltip_restart_round": "Mevcut turu baştan başlat.",
   "tooltip_skip": "Sonraki tura geç.",
   "tooltip_reset": "Zamanlayıcıyı ilk çalışma turuna sıfırla. Mevcut oturum ilerlemesi silinecek.",

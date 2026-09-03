@@ -138,6 +138,7 @@
   "notification_long_break_body": "Vous méritez une longue pause. Éloignez-vous et rechargez les batteries.",
   "tooltip_settings": "Ouvrir les paramètres",
   "tooltip_statistics": "Ouvrir les statistiques",
+  "tooltip_pin": "Basculer toujours visible",
   "tooltip_restart_round": "Recommencer la session en cours depuis le début.",
   "tooltip_skip": "Passer à la session suivante.",
   "tooltip_reset": "Réinitialiser le minuteur à la première session de travail. La progression de la session en cours sera effacée.",

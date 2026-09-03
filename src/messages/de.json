@@ -138,6 +138,7 @@
   "notification_long_break_body": "Du hast dir eine lange Pause verdient. Geh weg und tanke neue Energie.",
   "tooltip_settings": "Einstellungen öffnen",
   "tooltip_statistics": "Statistiken öffnen",
+  "tooltip_pin": "Immer im Vordergrund umschalten",
   "tooltip_restart_round": "Die aktuelle Runde von vorne beginnen.",
   "tooltip_skip": "Zur nächsten Runde springen.",
   "tooltip_reset": "Den Timer auf die erste Arbeitsrunde zurücksetzen. Der aktuelle Sitzungsfortschritt wird gelöscht.",

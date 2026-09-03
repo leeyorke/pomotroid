@@ -1,11 +1,16 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { getCurrentWebviewWindow, WebviewWindow } from '@tauri-apps/api/webviewWindow';
-  import { setWindowVisibility } from '$lib/ipc';
+  import { setWindowVisibility, setSetting } from '$lib/ipc';
   import { settings } from '$lib/stores/settings';
   import { isMac } from '$lib/utils/platform';
   import Tooltip from './Tooltip.svelte';
   import * as m from '$paraglide/messages.js';
+
+  async function toggleAlwaysOnTop() {
+    const updated = await setSetting('always_on_top', $settings.always_on_top ? 'false' : 'true');
+    settings.set(updated);
+  }
 
   let maximized = $state(false);
   let suppressTitlebarHover = $state(false);
@@ -178,17 +183,48 @@
   </Tooltip>
 {/snippet}
 
+{#snippet pinBtn()}
+  <Tooltip text={m.tooltip_pin()}>
+    <button
+      class="btn-icon"
+      class:pinned={$settings.always_on_top}
+      onclick={toggleAlwaysOnTop}
+      aria-label="Toggle always on top"
+    >
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path
+          d="M8 2 L8 9 M5 6 L8 9 L11 6"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          fill={$settings.always_on_top ? 'currentColor' : 'none'}
+        />
+        <path
+          d="M5 10 L5 11.5 C5 12.33 5.67 13 6.5 13 L9.5 13 C10.33 13 11 12.33 11 11.5 L11 10"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          fill="none"
+        />
+      </svg>
+    </button>
+  </Tooltip>
+{/snippet}
+
 <nav class="titlebar" class:suppress-hover={suppressTitlebarHover} data-tauri-drag-region>
   <!-- Left: settings + stats buttons on Linux/Windows. On macOS the traffic
        lights live here; the action buttons move to the right side instead. -->
   {#if !isMac}
     {@render settingsBtn()}
     {@render statsBtn()}
+    {@render pinBtn()}
   {/if}
 
   <!-- Right: settings + stats buttons on macOS, window controls on Linux/Windows. -->
   <div class="controls">
     {#if isMac}
+      {@render pinBtn()}
       {@render statsBtn()}
       {@render settingsBtn()}
     {:else}
@@ -327,5 +363,9 @@
   .titlebar:not(.suppress-hover) .btn-icon.close:hover {
     color: var(--color-background);
     background: var(--color-focus-round);
+  }
+
+  .btn-icon.pinned {
+    color: var(--color-accent);
   }
 </style>

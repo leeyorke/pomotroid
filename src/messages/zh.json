@@ -138,6 +138,7 @@
   "notification_long_break_body": "你赢得了一次长休息。离开一下，充充电。",
   "tooltip_settings": "打开设置",
   "tooltip_statistics": "打开统计",
+  "tooltip_pin": "切换窗口置顶",
   "tooltip_restart_round": "从头开始重启当前轮次。",
   "tooltip_skip": "跳过到下一轮。",
   "tooltip_reset": "将计时器重置到第一个工作轮次。当前会话进度将被清除。",
